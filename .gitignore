@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+# dotnet project stuff
+bin
+obj
+*.user
+*.userprefs
+
+# OS files
+.DS_Store

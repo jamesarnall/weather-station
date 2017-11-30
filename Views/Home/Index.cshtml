@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png"> -->
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        
+
+        <div class="container">
+            
+            <div class="datetime">
+                <div class="datetime__time"><span id="datetime_time"></span></div>
+                <div class="datetime__date" id="datetime_date"></div>
+            </div>
+
+            <div class="weather">
+                <div class="current">
+                    <div class="current__conditions">
+                        <div class="icon" id="conditions_icon"></div>
+                        <div class="current__conditions__description" id="conditions_desc"></div>
+                    </div>
+                    <div class="current__temp"><span id="temperature"></span> <span class="subtext">&#8457;</span></div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+        <!-- <script src="js/vendor/modernizr-3.5.0.min.js"></script> -->
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script> -->
+        <!-- <script src="js/plugins.js"></script> -->
+        <script src="js/scripts.js"></script>
+
+        <script>
+
+            (function($, moment) {
+
+                var apiUrl = '/api/weather', 
+                    dom = {
+                        temperature: document.getElementById("temperature"),
+                        datetimeTime: document.getElementById("datetime_time"),
+                        datetimeDate: document.getElementById("datetime_date"),
+                        conditionsDesc:  document.getElementById("conditions_desc"),
+                        conditionsIcon:  document.getElementById("conditions_icon")
+                    };
+
+                ws.load($, dom, apiUrl);
+
+            })(jQuery, moment);
+
+        </script>
+    </body>
+</html>

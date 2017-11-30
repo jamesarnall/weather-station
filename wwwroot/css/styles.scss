@@ -1,0 +1,79 @@
+// styles.scss
+
+// So Roboto Sass knows where to find the fonts,
+// where we've copied them from node_modules to ./dist/fonts/roboto
+$roboto-font-path: '../fonts';
+$font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import '../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface';
+
+body {
+    text-align: center;
+}
+
+.primary-text-color {
+    @extend .text-primary;
+}
+
+.subtext {
+    font-size: .66em;
+    font-weight: 300;
+    // @extend .align-top;
+}
+
+.datetime {
+
+    &__date {
+        color     : $text-muted;
+        font-size : 48px;
+        font-weight: 300;
+        margin-top: -36px;
+        text-transform: uppercase;
+    }
+
+    &__time {
+        @extend .primary-text-color;
+        font-size  : 96px;
+        font-weight: 500;
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+
+}
+
+.icon {
+    height : 400px;
+    margin: 0 auto;
+    width  : 400px;
+    text-indent: -9999px;
+
+    &--rain {
+        background: url(../img/amcharts_weather_icons_1.0.0/animated/rainy-1.svg) no-repeat;
+        background-size: contain;
+    }
+
+    &--clear-day {
+        background: url(../img/amcharts_weather_icons_1.0.0/animated/day.svg) no-repeat;
+        background-size: contain;
+    }
+
+    &--clear-night {
+        background: url(../img/amcharts_weather_icons_1.0.0/animated/night.svg) no-repeat;
+        background-size: contain;
+    }
+
+    // clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night
+}
+
+.current {
+    &__conditions__description {
+        font-size   : 36px;
+        font-weight : 300;
+        margin-top: 0;
+    }
+
+    &__temp {
+        font-size   : 96px;
+        font-weight : 500;
+    }
+}
