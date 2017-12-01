@@ -8,7 +8,7 @@ var ws = {};
 
 ws.celsiusToFahrenheit = function(temp) {
     return Math.round(temp * 1.8 + 32);
-},
+};
 
 ws.CurrentConditions = function () {
     return {
@@ -17,9 +17,9 @@ ws.CurrentConditions = function () {
             fahrenheit : 0
         }
     }
-},
+};
 
-ws.ForecastPeriod = function () { },
+ws.ForecastPeriod = function () { };
 
 ws.api = function (apiUrl) {
     return $.ajax({
@@ -28,7 +28,23 @@ ws.api = function (apiUrl) {
         type        : "get",
         url         : apiUrl
     });
-},
+};
+
+ws.fetchApiData = function(apiUrl, dom) {
+  ws.api(apiUrl)
+    .done(function (result) {
+        dom.temperature.textContent = result.temperature;
+        dom.datetimeTime.textContent = result.datetimeTime + " " + result.datetimeAmPm;
+        dom.datetimeDate.textContent = result.datetimeDate;
+        dom.conditionsDesc.textContent = result.conditionsDesc;
+        dom.conditionsIcon.className = "icon " + result.conditionsIcon;
+    })
+    .fail(function (result) {
+        console.log(result);
+        console.log("FAIL API")
+    })
+  ;
+};
 
 ws.load = function ($, dom, apiUrl) {
 
@@ -37,17 +53,10 @@ ws.load = function ($, dom, apiUrl) {
         return;
     }
 
-    ws.api(apiUrl)
-        .done(function (result) {
-            dom.temperature.textContent = result.temperature;
-            dom.datetimeTime.textContent = result.datetimeTime + " " + result.datetimeAmPm;
-            dom.datetimeDate.textContent = result.datetimeDate;
-            dom.conditionsDesc.textContent = result.conditionsDesc;
-            dom.conditionsIcon.className = "icon " + result.conditionsIcon;
-        })
-        .fail(function (result) {
-            console.log(result);
-            console.log("FAIKL API")
-        })
+    ws.fetchApiData(apiUrl, dom);
+
+    setInterval(function() {
+      ws.fetchApiData(apiUrl, dom);
+    }, 60000);
 
 };
