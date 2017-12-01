@@ -39,7 +39,6 @@ ws.load = function ($, dom, apiUrl) {
 
     ws.api(apiUrl)
         .done(function (result) {
-            console.log(result);
             dom.temperature.textContent = result.temperature;
             dom.datetimeTime.textContent = result.datetimeTime + " " + result.datetimeAmPm;
             dom.datetimeDate.textContent = result.datetimeDate;
@@ -50,5 +49,5 @@ ws.load = function ($, dom, apiUrl) {
             console.log(result);
             console.log("FAIKL API")
         })
-        
+
 };
