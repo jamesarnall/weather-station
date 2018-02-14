@@ -1258,13 +1258,12 @@ mark,
 .text-muted {
   color: #777777; }
 
-.text-primary, .primary-text-color, .datetime__time {
+.text-primary, .primary-text-color {
   color: #337ab7; }
 
-a.text-primary:hover, a.primary-text-color:hover, a.datetime__time:hover,
+a.text-primary:hover, a.primary-text-color:hover,
 a.text-primary:focus,
-a.primary-text-color:focus,
-a.datetime__time:focus {
+a.primary-text-color:focus {
   color: #286090; }
 
 .text-success {
@@ -5960,25 +5959,33 @@ button.close {
   src: url("../fonts/roboto/Roboto-BlackItalic.eot");
   src: local("Roboto BlackItalic"), local("Roboto-BlackItalic"), url("../fonts/roboto/Roboto-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-BlackItalic.woff2") format("woff2"), url("../fonts/roboto/Roboto-BlackItalic.woff") format("woff"), url("../fonts/roboto/Roboto-BlackItalic.ttf") format("truetype"), url("../fonts/roboto/Roboto-BlackItalic.svg#Roboto") format("svg"); }
 
-body {
-  text-align: center; }
+/**
+ * Basic UI elements 
+ */
+.current_time {
+  font-size: 96px;
+  font-weight: 500;
+  margin-top: 0;
+  text-transform: uppercase; }
 
-.subtext {
-  font-size: .66em;
-  font-weight: 300; }
-
-.datetime__date {
-  color: #777777;
+.current_date {
   font-size: 48px;
   font-weight: 300;
   margin-top: -36px;
   text-transform: uppercase; }
 
-.datetime__time {
+.current_conditions__description {
+  font-size: 36px;
+  font-weight: 300;
+  margin-top: 0; }
+
+.current_temp {
   font-size: 96px;
-  font-weight: 500;
-  margin-top: 0;
-  text-transform: uppercase; }
+  font-weight: 500; }
+
+.subtext {
+  font-size: .66em;
+  font-weight: 300; }
 
 .icon {
   height: 400px;
@@ -5995,11 +6002,94 @@ body {
     background: url(../img/amcharts_weather_icons_1.0.0/animated/night.svg) no-repeat;
     background-size: contain; }
 
-.current__conditions__description {
-  font-size: 36px;
-  font-weight: 300;
-  margin-top: 0; }
-
-.current__temp {
-  font-size: 96px;
-  font-weight: 500; }
+/**
+ * Variations based on context (i.e. conditions)
+ */
+.body {
+  text-align: center; }
+  .body.day.clear, .body.day.wind {
+    background-color: #69D2E7; }
+    .body.day.clear .current_time, .body.day.wind .current_time {
+      color: #FFE545; }
+    .body.day.clear .current_date, .body.day.wind .current_date {
+      color: #FEFBAF; }
+    .body.day.clear .current_conditions__description, .body.day.wind .current_conditions__description {
+      color: #026475; }
+    .body.day.clear .current_temp, .body.day.wind .current_temp {
+      color: #FFE545; }
+  .body.day.rain {
+    background-color: #667787; }
+    .body.day.rain .current_time {
+      color: #F7F6E2; }
+    .body.day.rain .current_date {
+      color: #D3CCC6; }
+    .body.day.rain .current_conditions__description {
+      color: #D3CCC6; }
+    .body.day.rain .current_temp {
+      color: #F7F6E2; }
+  .body.day.snow {
+    background-color: #FCFDFF; }
+    .body.day.snow .current_time {
+      color: #6C788E; }
+    .body.day.snow .current_date {
+      color: #A6AEC1; }
+    .body.day.snow .current_conditions__description {
+      color: #A6AEC1; }
+    .body.day.snow .current_temp {
+      color: #6C788E; }
+  .body.day.sleet {
+    background-color: #ACAAA8; }
+    .body.day.sleet .current_time {
+      color: #313233; }
+    .body.day.sleet .current_date {
+      color: #313233; }
+    .body.day.sleet .current_conditions__description {
+      color: #EEEADB; }
+    .body.day.sleet .current_temp {
+      color: #313233; }
+  .body.day.fog {
+    background-color: #E6E8E3; }
+    .body.day.fog .current_time {
+      color: #8F9A9C; }
+    .body.day.fog .current_date {
+      color: #BEC3BC; }
+    .body.day.fog .current_conditions__description {
+      color: #8F9A9C; }
+    .body.day.fog .current_temp {
+      color: #BEC3BC; }
+  .body.day.cloudy {
+    background-color: #bbbbbb; }
+    .body.day.cloudy .current_time {
+      color: #ffffff; }
+    .body.day.cloudy .current_date {
+      color: #ffffff; }
+    .body.day.cloudy .current_conditions__description {
+      color: #ffffff; }
+    .body.day.cloudy .current_temp {
+      color: #ffffff; }
+  .body.day.partlycloudy {
+    background-color: #95A8C4; }
+    .body.day.partlycloudy .current_time {
+      color: #F1ED05; }
+    .body.day.partlycloudy .current_date {
+      color: #F4C111; }
+    .body.day.partlycloudy .current_conditions__description {
+      color: #F4C111; }
+    .body.day.partlycloudy .current_temp {
+      color: #F1ED05; }
+  .body.night {
+    background-color: #000011; }
+    .body.night.clear, .body.night.wind {
+      background-color: #000011; }
+    .body.night.rain {
+      background-color: #bbccdd; }
+    .body.night.snow {
+      background-color: #efefef; }
+    .body.night.sleet {
+      background-color: #aabbdd; }
+    .body.night.fog {
+      background-color: #efefef; }
+    .body.night.cloudy {
+      background-color: #bbbbbb; }
+    .body.night.partlycloudy {
+      background-color: #99aacc; }

@@ -29,6 +29,7 @@ gulp.task('sass', ['fonts'], function() {
     return gulp.src('./wwwroot/css/*.scss')
              .pipe(sass())
              .pipe(gulp.dest('./wwwroot/css'))
+             .pipe(browserSync.stream());
            ;
 });
 
@@ -46,9 +47,11 @@ gulp.task('build', ['html','img','sass', 'js'], function() {
 });
 
 
+gulp.task('watch-sass', ['sass'], function() {
+    gulp.watch("wwwroot/css/*.scss", ['sass']);
+});
 
-
-
+// TODO: Out of date, using static files and we've moved on to .NET
 gulp.task('serve', ['build'], function() {
 
     browserSync.init({

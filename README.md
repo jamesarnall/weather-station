@@ -5,12 +5,23 @@ device, as an ambient info source for what the weather is like.
 
 Live app: http://jamesarnall-weather.azurewebsites.net/
 
+
 ## Dependencies
 
 - The DarkSky API
 - The DarkSky nuget package
 - jQuery
-- Bootstrap
+- Bootstrap 3.37
+- Roboto font
+
+## To Run
+
+```
+dotnet run
+```
+
+This will start an HTTP server, runnning on ```http://localhost:5000```.
+
 
 ## To Do
 

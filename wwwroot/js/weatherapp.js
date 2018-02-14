@@ -33,11 +33,11 @@ ws.api = function (apiUrl) {
 ws.fetchApiData = function(apiUrl, dom) {
   ws.api(apiUrl)
     .done(function (result) {
-        dom.temperature.textContent = result.temperature;
-        dom.datetimeTime.textContent = result.datetimeTime + " " + result.datetimeAmPm;
-        dom.datetimeDate.textContent = result.datetimeDate;
+        dom.temperature.textContent    = result.temperature;
+        dom.datetimeTime.textContent   = result.datetimeTime + " " + result.datetimeAmPm;
+        dom.datetimeDate.textContent   = result.datetimeDate;
         dom.conditionsDesc.textContent = result.conditionsDesc;
-        dom.conditionsIcon.className = "icon " + result.conditionsIcon;
+        dom.conditionsIcon.className   = "icon " + result.conditionsIcon;
     })
     .fail(function (result) {
         console.log(result);

@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="css/styles.css">
     </head>
-    <body>
+    <body class="body day partlycloudy">
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -23,20 +23,14 @@
 
         <div class="container">
             
-            <div class="datetime">
-                <div class="datetime__time"><span id="datetime_time"></span></div>
-                <div class="datetime__date" id="datetime_date"></div>
-            </div>
+            <div class="current_time current_time--day-clear"><span id="datetime_time"></span></div>
+            <div class="current_date current_date--day-clear" id="datetime_date"></div>
 
-            <div class="weather">
-                <div class="current">
-                    <div class="current__conditions">
-                        <div class="icon" id="conditions_icon"></div>
-                        <div class="current__conditions__description" id="conditions_desc"></div>
-                    </div>
-                    <div class="current__temp"><span id="temperature"></span> <span class="subtext">&#8457;</span></div>
-                </div>
+            <div class="current_conditions">
+                <div class="icon" id="conditions_icon"></div>
+                <div class="current_conditions__description current_conditions__description--day-clear" id="conditions_desc"></div>
             </div>
+            <div class="current_temp current_temp--day-clear"><span id="temperature"></span> <span class="subtext">&#8457;</span></div>
 
         </div>
 
@@ -54,11 +48,11 @@
 
                 var apiUrl = '/api/weather', 
                     dom = {
-                        temperature: document.getElementById("temperature"),
-                        datetimeTime: document.getElementById("datetime_time"),
-                        datetimeDate: document.getElementById("datetime_date"),
-                        conditionsDesc:  document.getElementById("conditions_desc"),
-                        conditionsIcon:  document.getElementById("conditions_icon")
+                        temperature    : document.getElementById("temperature"),
+                        datetimeTime   : document.getElementById("datetime_time"),
+                        datetimeDate   : document.getElementById("datetime_date"),
+                        conditionsDesc : document.getElementById("conditions_desc"),
+                        conditionsIcon : document.getElementById("conditions_icon")
                     };
 
                 ws.load($, dom, apiUrl);
