@@ -1,6 +1,6 @@
 using System;
 
-namespace dotnet.Models
+namespace WeatherStation.Models
 {
     public class ErrorViewModel
     {

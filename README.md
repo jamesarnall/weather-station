@@ -30,3 +30,4 @@ This will start an HTTP server, runnning on ```http://localhost:5000```.
 - [ ] There's no error handling really going on. Might change this, for
   academic reasons.
 - [x] Deployment somewhere, presumably Azure. Git hooks, all of that.
+- [ ] Scaffold up some tests

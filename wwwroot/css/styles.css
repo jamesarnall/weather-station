@@ -6005,91 +6005,97 @@ button.close {
 /**
  * Variations based on context (i.e. conditions)
  */
-.body {
+.weather {
   text-align: center; }
-  .body.day.clear, .body.day.wind {
+  .weather.day.clear, .weather.day.wind {
     background-color: #69D2E7; }
-    .body.day.clear .current_time, .body.day.wind .current_time {
+    .weather.day.clear .current_time, .weather.day.wind .current_time {
       color: #FFE545; }
-    .body.day.clear .current_date, .body.day.wind .current_date {
+    .weather.day.clear .current_date, .weather.day.wind .current_date {
       color: #FEFBAF; }
-    .body.day.clear .current_conditions__description, .body.day.wind .current_conditions__description {
+    .weather.day.clear .current_conditions__description, .weather.day.wind .current_conditions__description {
       color: #026475; }
-    .body.day.clear .current_temp, .body.day.wind .current_temp {
+    .weather.day.clear .current_temp, .weather.day.wind .current_temp {
       color: #FFE545; }
-  .body.day.rain {
+  .weather.day.rain {
     background-color: #667787; }
-    .body.day.rain .current_time {
+    .weather.day.rain .current_time {
       color: #F7F6E2; }
-    .body.day.rain .current_date {
+    .weather.day.rain .current_date {
       color: #D3CCC6; }
-    .body.day.rain .current_conditions__description {
+    .weather.day.rain .current_conditions__description {
       color: #D3CCC6; }
-    .body.day.rain .current_temp {
+    .weather.day.rain .current_temp {
       color: #F7F6E2; }
-  .body.day.snow {
+  .weather.day.snow {
     background-color: #FCFDFF; }
-    .body.day.snow .current_time {
+    .weather.day.snow .current_time {
       color: #6C788E; }
-    .body.day.snow .current_date {
+    .weather.day.snow .current_date {
       color: #A6AEC1; }
-    .body.day.snow .current_conditions__description {
+    .weather.day.snow .current_conditions__description {
       color: #A6AEC1; }
-    .body.day.snow .current_temp {
+    .weather.day.snow .current_temp {
       color: #6C788E; }
-  .body.day.sleet {
+  .weather.day.sleet {
     background-color: #ACAAA8; }
-    .body.day.sleet .current_time {
+    .weather.day.sleet .current_time {
       color: #313233; }
-    .body.day.sleet .current_date {
+    .weather.day.sleet .current_date {
       color: #313233; }
-    .body.day.sleet .current_conditions__description {
+    .weather.day.sleet .current_conditions__description {
       color: #EEEADB; }
-    .body.day.sleet .current_temp {
+    .weather.day.sleet .current_temp {
       color: #313233; }
-  .body.day.fog {
+  .weather.day.fog {
     background-color: #E6E8E3; }
-    .body.day.fog .current_time {
+    .weather.day.fog .current_time {
       color: #8F9A9C; }
-    .body.day.fog .current_date {
+    .weather.day.fog .current_date {
       color: #BEC3BC; }
-    .body.day.fog .current_conditions__description {
+    .weather.day.fog .current_conditions__description {
       color: #8F9A9C; }
-    .body.day.fog .current_temp {
+    .weather.day.fog .current_temp {
       color: #BEC3BC; }
-  .body.day.cloudy {
+  .weather.day.cloudy {
     background-color: #bbbbbb; }
-    .body.day.cloudy .current_time {
+    .weather.day.cloudy .current_time {
       color: #ffffff; }
-    .body.day.cloudy .current_date {
+    .weather.day.cloudy .current_date {
       color: #ffffff; }
-    .body.day.cloudy .current_conditions__description {
+    .weather.day.cloudy .current_conditions__description {
       color: #ffffff; }
-    .body.day.cloudy .current_temp {
+    .weather.day.cloudy .current_temp {
       color: #ffffff; }
-  .body.day.partlycloudy {
+    .weather.day.cloudy .icon {
+      background: url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-day-3.svg) no-repeat;
+      background-size: contain; }
+  .weather.day.partlycloudy {
     background-color: #95A8C4; }
-    .body.day.partlycloudy .current_time {
+    .weather.day.partlycloudy .current_time {
       color: #F1ED05; }
-    .body.day.partlycloudy .current_date {
+    .weather.day.partlycloudy .current_date {
       color: #F4C111; }
-    .body.day.partlycloudy .current_conditions__description {
+    .weather.day.partlycloudy .current_conditions__description {
       color: #F4C111; }
-    .body.day.partlycloudy .current_temp {
+    .weather.day.partlycloudy .current_temp {
       color: #F1ED05; }
-  .body.night {
+  .weather.night {
     background-color: #000011; }
-    .body.night.clear, .body.night.wind {
+    .weather.night.clear, .weather.night.wind {
       background-color: #000011; }
-    .body.night.rain {
+    .weather.night.rain {
       background-color: #bbccdd; }
-    .body.night.snow {
+    .weather.night.snow {
       background-color: #efefef; }
-    .body.night.sleet {
+    .weather.night.sleet {
       background-color: #aabbdd; }
-    .body.night.fog {
+    .weather.night.fog {
       background-color: #efefef; }
-    .body.night.cloudy {
-      background-color: #bbbbbb; }
-    .body.night.partlycloudy {
+    .weather.night.cloudy {
+      background-color: #000011; }
+      .weather.night.cloudy .icon {
+        background: url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-night-2.svg) no-repeat;
+        background-size: contain; }
+    .weather.night.partlycloudy {
       background-color: #99aacc; }

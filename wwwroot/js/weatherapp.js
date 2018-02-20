@@ -33,9 +33,10 @@ ws.api = function (apiUrl) {
 ws.fetchApiData = function(apiUrl, dom) {
   ws.api(apiUrl)
     .done(function (result) {
+        dom.body.className             = "weather " + result.dayOrNight + " " + result.conditionsShort;
         dom.temperature.textContent    = result.temperature;
-        dom.datetimeTime.textContent   = result.datetimeTime + " " + result.datetimeAmPm;
-        dom.datetimeDate.textContent   = result.datetimeDate;
+        dom.currentTime.textContent    = result.currentTime;
+        dom.currentDate.textContent    = result.currentDate;
         dom.conditionsDesc.textContent = result.conditionsDesc;
         dom.conditionsIcon.className   = "icon " + result.conditionsIcon;
     })

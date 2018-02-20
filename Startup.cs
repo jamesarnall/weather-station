@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WeatherStation.Services;
 
-namespace dotnet
+namespace WeatherStation
 {
     public class Startup
     {
@@ -21,6 +22,7 @@ namespace dotnet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IWeatherService, MockWeatherService>();
             services.AddMvc();
         }
 

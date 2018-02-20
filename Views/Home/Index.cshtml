@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="css/styles.css">
     </head>
-    <body class="body day partlycloudy">
+    <body class="weather night cloudy">
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -23,8 +23,8 @@
 
         <div class="container">
             
-            <div class="current_time current_time--day-clear"><span id="datetime_time"></span></div>
-            <div class="current_date current_date--day-clear" id="datetime_date"></div>
+            <div class="current_time current_time--day-clear"><span id="current_time"></span></div>
+            <div class="current_date current_date--day-clear" id="current_date"></div>
 
             <div class="current_conditions">
                 <div class="icon" id="conditions_icon"></div>
@@ -48,9 +48,10 @@
 
                 var apiUrl = '/api/weather', 
                     dom = {
+                        body           : document.body,
                         temperature    : document.getElementById("temperature"),
-                        datetimeTime   : document.getElementById("datetime_time"),
-                        datetimeDate   : document.getElementById("datetime_date"),
+                        currentTime    : document.getElementById("current_time"),
+                        currentDate    : document.getElementById("current_date"),
                         conditionsDesc : document.getElementById("conditions_desc"),
                         conditionsIcon : document.getElementById("conditions_icon")
                     };

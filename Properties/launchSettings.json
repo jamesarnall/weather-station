@@ -1,0 +1,11 @@
+{
+    "profiles": {
+        "WeatherStation_DEV": {
+            "commandName": "Project",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "applicationUrl": "http://localhost:1666/"
+        }
+    }
+}

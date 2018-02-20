@@ -9,22 +9,33 @@ using System.Threading.Tasks;
 using System;
 using DarkSkyApi;
 using DarkSkyApi.Models;
-using dotnet.Models;
+using WeatherStation.Models;
+using WeatherStation.Services;
 
-namespace dotnet.Controllers
+namespace WeatherStation.Controllers
 {
     [Route("api/[controller]")]
     public class WeatherController : Controller
     {
+
+        private readonly IWeatherService _service;
+
+        public WeatherController(IWeatherService weatherService) 
+        {
+            _service = weatherService;
+        }
+
         // GET api/values
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var client = new DarkSkyService("c35a1260e1e4fcd3638d98ff589fdb20");
+
+            return Ok(_service.GetWeather());
+            // var client = new DarkSkyService("c35a1260e1e4fcd3638d98ff589fdb20");
             
-            Forecast result = await client.GetTimeMachineWeatherAsync(41.9196671, -87.6408105, DateTimeOffset.Now);
+            // Forecast result = await client.GetTimeMachineWeatherAsync(41.9196671, -87.6408105, DateTimeOffset.Now);
             
-            return Ok(new Weather(result));
+            // return Ok(new Weather(result));
         }
     }
 }
