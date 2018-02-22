@@ -5,11 +5,15 @@ namespace WeatherStation.Services
 {
     public class WeatherService: IWeatherService 
     {
-        public Weather GetWeather() {
+
+        /// <inheritdoc />
+        public Weather GetWeather() 
+        {
             throw new NotImplementedException("WeatherService.GetWeather NOT IMPLEMENTED");
         }
 
-        public string GetDayOrNight() 
+        /// <inheritdoc />
+        public string GetDayOrNight(DateTime currentTime) 
         {
             throw new NotImplementedException("WeatherService.GetDayOrNight NOT IMPLEMENTED");
         }

@@ -4,8 +4,8 @@
 // where we've copied them from node_modules to ./dist/fonts/roboto
 $roboto-font-path: '../fonts';
 $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
-@import '../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface';
+@import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import '../../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface';
 
 
 

@@ -13,6 +13,8 @@ Live app: http://jamesarnall-weather.azurewebsites.net/
 - jQuery
 - Bootstrap 3.37
 - Roboto font
+- The Sunrise Sunset API:
+  [https://sunrise-sunset.org/api](https://sunrise-sunset.org/api)
 
 ## To Run
 

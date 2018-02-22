@@ -22,22 +22,22 @@ gulp.task('img', function() {
 
 gulp.task('fonts', function() {
     return gulp.src('./node_modules/roboto-fontface/fonts/roboto/*.*')
-             .pipe(gulp.dest('./wwwroot/fonts/roboto'));
+             .pipe(gulp.dest('./WeatherStation/wwwroot/fonts/roboto'));
 });
 
 gulp.task('sass', ['fonts'], function() {
-    return gulp.src('./wwwroot/css/*.scss')
+    return gulp.src('./WeatherStation/wwwroot/css/*.scss')
              .pipe(sass())
-             .pipe(gulp.dest('./wwwroot/css'))
+             .pipe(gulp.dest('./WeatherStation/wwwroot/css'))
              .pipe(browserSync.stream());
            ;
 });
 
 gulp.task('js', function() {
-    return gulp.src(['./node_modules/jquery/dist/jquery.min.js', './node_modules/moment/min/moment.min.js', './wwwroot/js/weatherapp.js'])
+    return gulp.src(['./node_modules/jquery/dist/jquery.min.js', './node_modules/moment/min/moment.min.js', './WeatherStation/wwwroot/js/weatherapp.js'])
         .pipe(concat('scripts.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./wwwroot/js'));
+        .pipe(gulp.dest('./WeatherStation/wwwroot/js'));
 });
 
 gulp.task('build', ['html','img','sass', 'js'], function() {
@@ -48,7 +48,7 @@ gulp.task('build', ['html','img','sass', 'js'], function() {
 
 
 gulp.task('watch-sass', ['sass'], function() {
-    gulp.watch("wwwroot/css/*.scss", ['sass']);
+    gulp.watch("./WeatherStation/wwwroot/css/*.scss", ['sass']);
 });
 
 // TODO: Out of date, using static files and we've moved on to .NET
