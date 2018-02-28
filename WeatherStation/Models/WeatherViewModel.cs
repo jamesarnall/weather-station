@@ -1,6 +1,3 @@
-// using Newtonsoft.Json;
-// using Newtonsoft.Json.Converters;
-// using WeatherStation.Enums;
 
 namespace WeatherStation.Models
 {
@@ -33,38 +30,6 @@ namespace WeatherStation.Models
                     .Replace("-night", "")
                     .Replace("-", "")
                    ;
-            /*switch(label)
-            {
-                case "rain":
-                    return Icon.Rain;
-                case "snow":
-                    return Icon.Snow;
-                case "sleet":
-                    return Icon.Sleet;
-                case "wind":
-                    return Icon.Wind;
-                case "fog":
-                    return Icon.Fog;
-                case "cloudy":
-                    return Icon.Cloudy;
-                case "partly-cloudy-day":
-                case "partly-cloudy-night":
-                    return Icon.PartlyCloudy;
-                default:
-                    return Icon.Clear;
-            }*/
         }
     }
 }
-        /*
-            clear-day, 
-            clear-night, 
-            rain, 
-            snow, 
-            sleet,
-            wind, 
-            fog, 
-            cloudy, 
-            partly-cloudy-day,
-            partly-cloudy-night
-        */

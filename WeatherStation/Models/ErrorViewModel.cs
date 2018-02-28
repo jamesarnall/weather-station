@@ -1,5 +1,3 @@
-using System;
-
 namespace WeatherStation.Models
 {
     public class ErrorViewModel

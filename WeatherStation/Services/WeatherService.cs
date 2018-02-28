@@ -1,10 +1,8 @@
-using Newtonsoft.Json;
 using System;
-    using System.Net.Http;
-    using System.Threading.Tasks;
+using System.Threading.Tasks;
 using WeatherStation.Models;
 
-namespace WeatherStation.Services 
+namespace WeatherStation.Services
 {
     public class WeatherService: IWeatherService 
     {

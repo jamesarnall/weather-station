@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using WeatherStation.Models;
+﻿using WeatherStation.Models;
 
 namespace WeatherStation.Services
 {
