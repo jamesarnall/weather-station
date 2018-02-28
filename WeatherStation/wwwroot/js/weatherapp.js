@@ -31,14 +31,16 @@ ws.api = function (apiUrl) {
 };
 
 ws.fetchApiData = function(apiUrl, dom) {
+  $("#" + dom.containerId).fadeOut();
   ws.api(apiUrl)
     .done(function (result) {
-        dom.body.className             = "weather " + result.dayOrNight + " " + result.conditionsShort;
+        dom.body.className             = "weather " + result.dayOrNight + " " + result.icon;
         dom.temperature.textContent    = result.temperature;
         dom.currentTime.textContent    = result.currentTime;
         dom.currentDate.textContent    = result.currentDate;
         dom.conditionsDesc.textContent = result.conditionsDesc;
-        dom.conditionsIcon.className   = "icon " + result.conditionsIcon;
+        dom.conditionsIcon.className   = "icon " + result.icon;
+        $("#" + dom.containerId).fadeIn();
     })
     .fail(function (result) {
         console.log(result);

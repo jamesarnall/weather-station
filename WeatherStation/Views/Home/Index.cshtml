@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿@model WeatherStation.Models.WeatherViewModel
+
+<!doctype html>
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
@@ -13,7 +15,7 @@
 
         <link rel="stylesheet" href="css/styles.css">
     </head>
-    <body class="weather night cloudy">
+    <body class="weather @Model.DayOrNight @Model.Icon">
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -21,16 +23,16 @@
         <!-- Add your site or application content here -->
         
 
-        <div class="container">
+        <div id="weather-container" class="container">
             
-            <div class="current_time current_time--day-clear"><span id="current_time"></span></div>
-            <div class="current_date current_date--day-clear" id="current_date"></div>
+            <div class="current_time"><span id="current_time">@Model.CurrentTime</span></div>
+            <div class="current_date" id="current_date">@Model.CurrentDate</div>
 
             <div class="current_conditions">
-                <div class="icon" id="conditions_icon"></div>
-                <div class="current_conditions__description current_conditions__description--day-clear" id="conditions_desc"></div>
+                <div class="icon @Model.Icon" id="conditions_icon"></div>
+                <div class="current_conditions__description" id="conditions_desc">@Model.ConditionsDesc</div>
             </div>
-            <div class="current_temp current_temp--day-clear"><span id="temperature"></span> <span class="subtext">&#8457;</span></div>
+            <div class="current_temp"><span id="temperature">@Model.Temperature</span> <span class="subtext">&#8457;</span></div>
 
         </div>
 
@@ -53,10 +55,12 @@
                         currentTime    : document.getElementById("current_time"),
                         currentDate    : document.getElementById("current_date"),
                         conditionsDesc : document.getElementById("conditions_desc"),
-                        conditionsIcon : document.getElementById("conditions_icon")
+                        conditionsIcon : document.getElementById("conditions_icon"),
+                        containerId    : "weather-container"
                     };
 
                 ws.load($, dom, apiUrl);
+                $("#weather-container").fadeIn();
 
             })(jQuery, moment);
 

@@ -29,13 +29,8 @@ namespace WeatherStation.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-
-            return Ok(_service.GetWeather());
-            // var client = new DarkSkyService("c35a1260e1e4fcd3638d98ff589fdb20");
-            
-            // Forecast result = await client.GetTimeMachineWeatherAsync(41.9196671, -87.6408105, DateTimeOffset.Now);
-            
-            // return Ok(new Weather(result));
+            WeatherViewModel weather = await _service.GetWeatherAsync();
+            return Ok(weather);
         }
     }
 }

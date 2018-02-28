@@ -51,12 +51,13 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 }
 
 .icon {
-    height      : 400px;
-    margin      : 0 auto;
-    width       : 400px;
-    text-indent : -9999px;
-
-    &--rain {
+    background-size : contain !important;
+    height          : 400px;
+    margin          : 0 auto;
+    width           : 400px;
+    text-indent     : -9999px;
+    
+    /* &--rain {
         background      : url(../img/amcharts_weather_icons_1.0.0/animated/rainy-1.svg) no-repeat;
         background-size : contain;
     }
@@ -69,7 +70,7 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
     &--clear-night {
         background      : url(../img/amcharts_weather_icons_1.0.0/animated/night.svg) no-repeat;
         background-size : contain;
-    }
+    } */
 
     // clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night
 }
@@ -80,6 +81,10 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 /**
  * Variations based on context (i.e. conditions)
  */
+
+ #weather-container {
+    display: none;
+ } 
 
 .weather {
 
@@ -109,6 +114,10 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
                 color: #FFE545;
             }
 
+            & .icon {
+                background      : url(../img/amcharts_weather_icons_1.0.0/animated/day.svg) no-repeat;
+            }
+
         }
 
         // Palette: http://www.colourlovers.com/palette/3292428/rains_in_my_dreams
@@ -130,6 +139,10 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 
             & .current_temp {                
                 color: #F7F6E2;                
+            }
+
+            & .icon {
+                background      : url(../img/amcharts_weather_icons_1.0.0/animated/rainy-4.svg) no-repeat;
             }
         }
 
@@ -153,6 +166,10 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             & .current_temp {
                 color: #6C788E;
             }
+
+            & .icon {
+                background      : url(../img/amcharts_weather_icons_1.0.0/animated/snowy-6.svg) no-repeat;
+            }
         }
 
         // Palette: http://www.colourlovers.com/palette/3640282/miss_sleet
@@ -173,6 +190,10 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 
             & .current_temp {
                color: #313233; 
+            }
+
+            & .icon {
+                background      : url(../img/amcharts_weather_icons_1.0.0/animated/rainy-7.svg) no-repeat;
             }
         }
 
@@ -221,7 +242,6 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 
             & .icon {
                 background      : url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-day-3.svg) no-repeat;
-                background-size : contain;
             }
         }
 
@@ -244,6 +264,10 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 
             & .current_temp {
                 color: #F1ED05; 
+            }
+
+            & .icon {
+                background      : url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg) no-repeat;
             }
         }
     }
@@ -380,7 +404,6 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 
             & .icon {
                 background      : url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-night-2.svg) no-repeat;
-                background-size : contain;
             }
         }
 
