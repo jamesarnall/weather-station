@@ -2,10 +2,18 @@
     "profiles": {
         "WeatherStation_DEV": {
             "commandName": "Project",
+            "launchBrowser": true,
             "environmentVariables": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "applicationUrl": "http://localhost:1666/"
+        },
+        "WeatherStation_Prod": {
+            "commandName": "Project",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Production"
+            },
+            "applicationUrl": "https://jamesarnall-weather.azurewebsites.net/"
         }
     }
 }

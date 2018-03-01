@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using TimeZoneNames;
 using WeatherStation.Models;
 
 namespace WeatherStation.Services
@@ -54,7 +55,21 @@ namespace WeatherStation.Services
         /// <inheritdoc />
         public WeatherViewModel MapDarkSkyToWeather(DarkSkyResult darkSky)
         {
-            var currentTime = darkSky.Currently.Time.InTimeZone(darkSky.Timezone);
+
+            // TODO: Need a test for timezone exception handling
+            var names = TZNames.GetNamesForTimeZone(darkSky.Timezone, "en-US");
+
+            DateTime currentTime;
+
+            try 
+            {
+                currentTime = darkSky.Currently.Time.InTimeZone(names.Generic);
+            }
+
+            catch (TimeZoneNotFoundException e)
+            {
+                currentTime = darkSky.Currently.Time.InTimeZone(darkSky.Timezone);
+            }
 
             var weather = new WeatherViewModel 
             {
