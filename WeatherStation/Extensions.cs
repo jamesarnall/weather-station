@@ -1,4 +1,5 @@
 using System;
+using TimeZoneNames;
 
 namespace WeatherStation 
 {
@@ -14,7 +15,20 @@ namespace WeatherStation
 
         public static DateTime InTimeZone(this DateTime nowTime, string timezoneName)
         {
-            TimeZoneInfo timezone = TimeZoneInfo.FindSystemTimeZoneById(timezoneName);
+            var names = TZNames.GetNamesForTimeZone(timezoneName, "en-US");
+
+            TimeZoneInfo timezone;
+
+            try 
+            {
+                timezone= TimeZoneInfo.FindSystemTimeZoneById(names.Generic);
+            }
+
+            catch (TimeZoneNotFoundException e)
+            {
+                timezone= TimeZoneInfo.FindSystemTimeZoneById(timezoneName);
+            }
+            
             return TimeZoneInfo.ConvertTimeFromUtc(nowTime, timezone);
         }
     }
