@@ -21,14 +21,14 @@ namespace WeatherStation
 
             try 
             {
-                timezone= TimeZoneInfo.FindSystemTimeZoneById(names.Generic);
+                timezone = TimeZoneInfo.FindSystemTimeZoneById(names.Standard);
             }
 
             catch (TimeZoneNotFoundException e)
             {
-                timezone= TimeZoneInfo.FindSystemTimeZoneById(timezoneName);
+                timezone = TimeZoneInfo.FindSystemTimeZoneById(timezoneName);
             }
-            
+
             return TimeZoneInfo.ConvertTimeFromUtc(nowTime, timezone);
         }
     }
