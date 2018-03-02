@@ -39,7 +39,7 @@ ws.fetchApiData = function(apiUrl, dom) {
         dom.currentTime.textContent    = result.currentTime;
         dom.currentDate.textContent    = result.currentDate;
         dom.conditionsDesc.textContent = result.conditionsDesc;
-        dom.conditionsIcon.className   = "icon " + result.icon;
+        dom.conditionsIcon.className   = "icon wi wi-night-sleet";// + result.icon;
         $("#" + dom.containerId).fadeIn();
     })
     .fail(function (result) {

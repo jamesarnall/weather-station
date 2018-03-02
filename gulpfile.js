@@ -20,9 +20,16 @@ gulp.task('img', function() {
              .pipe(gulp.dest(paths.dest + '/img'));
 });
 
-gulp.task('fonts', function() {
+gulp.task('fonts', ['fonts-roboto', 'fonts-weather'], function() { });
+
+gulp.task('fonts-roboto', function() {
     return gulp.src('./node_modules/roboto-fontface/fonts/roboto/*.*')
              .pipe(gulp.dest('./WeatherStation/wwwroot/fonts/roboto'));
+});
+
+gulp.task('fonts-weather', function() {
+    return gulp.src('./lib/weather-icons-master/font/*.*')
+             .pipe(gulp.dest('./WeatherStation/wwwroot/fonts/weather'));
 });
 
 gulp.task('sass', ['fonts'], function() {

@@ -7,6 +7,13 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 @import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 @import '../../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface';
 
+/**
+ * Redefine font path for Weather Icons 
+ */
+$wi-path: "../fonts/weather";
+@import '../../../lib/weather-icons-master/sass/weather-icons';
+
+
 
 
 .primary-text-color {
@@ -51,11 +58,14 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 }
 
 .icon {
-    background-size : contain !important;
-    height          : 400px;
-    margin          : 0 auto;
-    width           : 400px;
-    text-indent     : -9999px;
+    @extend .wi;
+    padding   : 48px;
+    font-size : 128px;
+    // background-size : contain !important;
+    // height          : 400px;
+    // margin          : 0 auto;
+    // width           : 400px;
+    // text-indent     : -9999px;
     
     /* &--rain {
         background      : url(../img/amcharts_weather_icons_1.0.0/animated/rainy-1.svg) no-repeat;
@@ -107,17 +117,29 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             }
 
             & .current_conditions__description {
-                color: #026475;
+                // color: #026475;
+                color : #FEFBAF;
             }
 
             & .current_temp {
                 color: #FFE545;
             }
 
-            & .icon {
-                background      : url(../img/amcharts_weather_icons_1.0.0/animated/day.svg) no-repeat;
-            }
+            // & .icon {
+            //     @extend .wi-night-sleet;
+            //     // background      : url(../img/amcharts_weather_icons_1.0.0/animated/day.svg) no-repeat;
+            // }
 
+        }
+
+        &.clear .icon {
+            @extend .wi-day-sunny;
+            color: #FFE545;
+        }
+
+        &.wind .icon {
+            @extend .wi-strong-wind;
+            color: #95A8C4;
         }
 
         // Palette: http://www.colourlovers.com/palette/3292428/rains_in_my_dreams
@@ -142,7 +164,7 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             }
 
             & .icon {
-                background      : url(../img/amcharts_weather_icons_1.0.0/animated/rainy-4.svg) no-repeat;
+                @extend .wi-day-rain;
             }
         }
 
@@ -168,7 +190,7 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             }
 
             & .icon {
-                background      : url(../img/amcharts_weather_icons_1.0.0/animated/snowy-6.svg) no-repeat;
+                @extend .wi-day-snow;
             }
         }
 
@@ -193,7 +215,7 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             }
 
             & .icon {
-                background      : url(../img/amcharts_weather_icons_1.0.0/animated/rainy-7.svg) no-repeat;
+                @extend .wi-day-sleet;
             }
         }
 
@@ -216,6 +238,10 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 
             & .current_temp {
                 color: #BEC3BC;
+            }
+
+            & .icon {
+                @extend .wi-day-fog;
             }
         }
 
@@ -241,7 +267,7 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             }
 
             & .icon {
-                background      : url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-day-3.svg) no-repeat;
+                @extend .wi-day-cloudy;
             }
         }
 
@@ -267,7 +293,7 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             }
 
             & .icon {
-                background      : url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg) no-repeat;
+                @extend .wi-day-sunny-overcast;
             }
         }
     }
@@ -298,6 +324,16 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             }
         }
 
+        &.clear .icon {
+            @extend .wi-night-clear;
+            color: #FFE545;
+        }
+
+        &.wind .icon {
+            @extend .wi-strong-wind;
+            color: #95A8C4;
+        }
+
         &.rain {
 
             background-color: #bbccdd;
@@ -316,6 +352,11 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             
             & .current_temp {
                 
+            }
+
+            & .icon {
+                @extend .wi-night-rain;
+                color: #95A8C4;
             }
         }
 
@@ -338,6 +379,11 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             & .current_temp {
                 
             }
+
+            & .icon {
+                @extend .wi-night-snow;
+                color: #95A8C4;
+            }
         }
 
         &.sleet {
@@ -359,6 +405,11 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             & .current_temp {
                 
             }
+
+            & .icon {
+                @extend .wi-night-sleet;
+                color: #95A8C4;
+            }
         }
 
         &.fog {
@@ -379,6 +430,11 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             
             & .current_temp {
                 
+            }
+
+            & .icon {
+                @extend .wi-night-fog;
+                color: #95A8C4;
             }
         }
 
@@ -405,6 +461,11 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             & .icon {
                 background      : url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-night-2.svg) no-repeat;
             }
+
+            & .icon {
+                @extend .wi-night-cloudy;
+                color: #95A8C4;
+            }
         }
 
         &.partlycloudy {
@@ -425,6 +486,11 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
             
             & .current_temp {
                 
+            }
+
+            & .icon {
+                @extend .wi-night-partly-cloudy;
+                color: #95A8C4;
             }
         }
     }
