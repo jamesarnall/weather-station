@@ -17,7 +17,7 @@ Live app: http://jamesarnall-weather.azurewebsites.net/
 
 ## To Run
 
-From root:
+From ```/WeatherStation```:
 ```
 dotnet run
 ```

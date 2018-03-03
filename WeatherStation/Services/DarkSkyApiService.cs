@@ -7,6 +7,10 @@ using WeatherStation.Models;
 
 namespace WeatherStation.Services
 {
+
+    /// <summary>
+    /// Service class that implements IWeatherService using data from the Dark Sky API service
+    /// </summary>
     public class DarkSkyApiService : IDarkSkyApiService 
     {
 
@@ -28,27 +32,14 @@ namespace WeatherStation.Services
                 result = GetDarkSkyResult(content);
             }
 
+            //
             return MapDarkSkyToWeather(result);
-
-            // throw new NotImplementedException("DarkSkyApiService.GetWeatherDataAsync NOT IMPLEMENTED");
         }
 
         /// <inheritdoc />
         public DarkSkyResult GetDarkSkyResult(string jsonData)
         {
-            // DarkSkyResult result = null;
-
-            // HttpResponseMessage response = await client.GetAsync(_apiUri);
-            // if (response.IsSuccessStatusCode)
-            // {
-            //     var content = await response.Content.ReadAsStringAsync();
-            //     result = JsonConvert.DeserializeObject<DarkSkyResult>(content);
-            // }
-            
-            // return result;
-
             return JsonConvert.DeserializeObject<DarkSkyResult>(jsonData);
-            // throw new NotImplementedException("DarkSkyApiService.GetDarkSkyResultAsync NOT IMPLEMENTED");
         }
 
         /// <inheritdoc />
@@ -61,7 +52,7 @@ namespace WeatherStation.Services
                 ConditionsLabel = darkSky.Currently.Icon,
                 ConditionsDesc  = darkSky.Currently.Summary,
                 DayOrNight      = darkSky.Currently.Time.DayOrNight(darkSky.Daily.Data[0].SunsetTime),
-                CurrentDate     = currentTime.ToString("dddd, MMMM d"),
+                CurrentDate     = currentTime.ToString("ddd, MMM d"),
                 CurrentTime     = currentTime.ToString("t"),
                 FeelsLike       = Math.Round(darkSky.Currently.ApparentTemperature).ToString(),
                 Temperature     = Math.Round(darkSky.Currently.Temperature).ToString()
@@ -69,7 +60,6 @@ namespace WeatherStation.Services
 
             //
             return weather;
-            // throw new NotImplementedException("DarkSkyApiService.MapDarkSkyToWeather NOT IMPLEMENTED");
         }
     }
 }
