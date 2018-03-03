@@ -4,7 +4,7 @@
 // where we've copied them from node_modules to ./dist/fonts/roboto
 $roboto-font-path: '../fonts';
 $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-@import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import '../../../node_modules/bootstrap/scss/bootstrap';
 @import '../../../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface';
 
 /**
@@ -55,6 +55,40 @@ $wi-path: "../fonts/weather";
 .subtext {
     font-size   : .66em;
     font-weight : 300;
+}
+
+@include media-breakpoint-up(xs) {
+  .current_time, .current_temp {
+    font-size: 3rem;
+  }
+  .current_date {
+    font-size: 2rem;
+    margin-top     : auto;
+  }
+  .current_conditions__description {
+    font-size: 1.5rem;
+  }
+
+  .current_temp {
+    font-size: 4rem;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .current_time, .current_temp {
+    font-size: 6rem;
+  }
+  .current_date {
+    font-size: 4rem;
+    margin-top     : auto;
+  }
+  .current_conditions__description {
+    font-size: 3rem;
+  }
+
+  .current_temp {
+    font-size: 8rem;
+  }
 }
 
 .icon {
@@ -308,25 +342,25 @@ $wi-path: "../fonts/weather";
             background-color: #000011;
 
             & .current_time {
-                
+                color: #336666;
             }
 
             & .current_date {
-                
+                color: #334444;
             }
 
             & .current_conditions__description {
-                
+                color: #334444;
             }
 
             & .current_temp {
-                
+                color: #336666;
             }
         }
 
         &.clear .icon {
             @extend .wi-night-clear;
-            color: #FFE545;
+            color: #999999;
         }
 
         &.wind .icon {
