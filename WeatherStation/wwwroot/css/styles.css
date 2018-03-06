@@ -8185,24 +8185,21 @@ a.text-dark:hover, a.text-dark:focus {
       .weather.night.rain .icon {
         color: #95A8C4; }
     .weather.night.snow {
-      background-color: #efefef; }
+      background-color: #000011;
+      color: #95A8C4; }
+      .weather.night.snow .current_time {
+        color: #ffffff; }
+      .weather.night.snow .current_temp {
+        color: #ffffff; }
       .weather.night.snow .icon {
-        color: #95A8C4; }
-    .weather.night.sleet {
-      background-color: #aabbdd; }
-      .weather.night.sleet .icon {
-        color: #95A8C4; }
-    .weather.night.fog {
-      background-color: #efefef; }
-      .weather.night.fog .icon {
-        color: #95A8C4; }
-    .weather.night.cloudy {
-      background-color: #000011; }
-      .weather.night.cloudy .icon {
-        background: url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-night-2.svg) no-repeat; }
-      .weather.night.cloudy .icon {
-        color: #95A8C4; }
-    .weather.night.partlycloudy {
-      background-color: #99aacc; }
-      .weather.night.partlycloudy .icon {
-        color: #95A8C4; }
+        color: #ffffff; }
+    .weather.night.sleet .icon {
+      color: #95A8C4; }
+    .weather.night.fog .icon {
+      color: #95A8C4; }
+    .weather.night.cloudy .icon {
+      background: url(../img/amcharts_weather_icons_1.0.0/animated/cloudy-night-2.svg) no-repeat; }
+    .weather.night.cloudy .icon {
+      color: #95A8C4; }
+    .weather.night.partlycloudy .icon {
+      color: #95A8C4; }

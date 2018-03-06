@@ -396,9 +396,11 @@ $wi-path: "../fonts/weather";
 
         &.snow {
 
-            background-color: #efefef;
+            background-color: #000011;
+            color: #95A8C4;
 
             & .current_time {
+                color: #ffffff;
                 
             }
 
@@ -411,18 +413,19 @@ $wi-path: "../fonts/weather";
             }
             
             & .current_temp {
+                color: #ffffff;
                 
             }
 
             & .icon {
                 @extend .wi-night-snow;
-                color: #95A8C4;
+                color: #ffffff;
             }
         }
 
         &.sleet {
 
-            background-color: #aabbdd;
+            // background-color: #aabbdd;
 
             & .current_time {
                 
@@ -448,7 +451,7 @@ $wi-path: "../fonts/weather";
 
         &.fog {
 
-            background-color: #efefef;
+            // background-color: #efefef;
 
             & .current_time {
                 
@@ -474,7 +477,7 @@ $wi-path: "../fonts/weather";
 
         &.cloudy {
 
-            background-color: #000011;
+            // background-color: #000011;
 
             & .current_time {
                 
@@ -504,7 +507,7 @@ $wi-path: "../fonts/weather";
 
         &.partlycloudy {
 
-            background-color: #99aacc;
+            // background-color: #99aacc;
 
             & .current_time {
                 
