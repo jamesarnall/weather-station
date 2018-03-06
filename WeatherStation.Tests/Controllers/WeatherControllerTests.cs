@@ -27,13 +27,13 @@ namespace WeatherStation.Tests
         {
             _serviceMock
                 .Setup(repo => repo.GetWeatherAsync())
-                .Returns(Task.FromResult(TestHelpers.GetMockWeatherView())); 
+                .Returns(Task.FromResult(MockHelpers.GetMockWeatherView())); 
 
             var result = await _controller.Get();
             var viewResult = Assert.IsType<OkObjectResult>(result);
             var model = Assert.IsAssignableFrom<WeatherViewModel>(viewResult.Value);
 
-            WeatherViewModel srcView = TestHelpers.GetMockWeatherView();
+            WeatherViewModel srcView = MockHelpers.GetMockWeatherView();
 
             Assert.Equal(srcView.ConditionsLabel, model.ConditionsLabel);
             Assert.Equal(srcView.ConditionsDesc,  model.ConditionsDesc);

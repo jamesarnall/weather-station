@@ -39,6 +39,7 @@ gulp build
   academic reasons.
 - [x] Deployment somewhere, presumably Azure. Git hooks, all of that.
 - [ ] Scaffold up some tests
+- [ ] Fix condition where AJAX GET fails and never tries again
 
 ## Someday?
 - [ ] Allow ZIP lookup, so anyone can use this; after looking up ZIP, it cookies their prefs

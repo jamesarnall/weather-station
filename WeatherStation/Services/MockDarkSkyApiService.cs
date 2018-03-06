@@ -10,11 +10,11 @@ namespace WeatherStation.Services
         public async Task<WeatherViewModel> GetWeatherAsync()
         {
             return new WeatherViewModel {
-                ConditionsLabel = "rainy",
+                ConditionsLabel = "clear",
                 ConditionsDesc  = "Rainy",
                 DayOrNight      = "night",
                 CurrentDate     = "1/12/2018",
-                CurrentTime     = "10:33 AM",
+                CurrentTime     = "10:33 PM",
                 Temperature     = "99"
             };
         }
@@ -22,13 +22,13 @@ namespace WeatherStation.Services
         /// <inheritdoc />
         public DarkSkyResult GetDarkSkyResult(string jsonData)
         {
-            throw new NotImplementedException("DarkSkyApiService.GetDarkSkyResultAsync NOT IMPLEMENTED");
+            throw new NotImplementedException("MockDarkSkyApiService.GetDarkSkyResultAsync NOT IMPLEMENTED");
         }
 
         /// <inheritdoc />
         public WeatherViewModel MapDarkSkyToWeather(DarkSkyResult darkSky)
         {
-            throw new NotImplementedException("DarkSkyApiService.MapDarkSkyToWeather NOT IMPLEMENTED");
+            throw new NotImplementedException("MockDarkSkyApiService.MapDarkSkyToWeather NOT IMPLEMENTED");
         }
 
 

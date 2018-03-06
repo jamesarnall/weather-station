@@ -24,7 +24,7 @@ namespace WeatherStation.Tests
         {
             _serviceMock
                 .Setup(repo => repo.GetWeatherAsync())
-                .Returns(Task.FromResult(TestHelpers.GetMockWeatherView())); 
+                .Returns(Task.FromResult(MockHelpers.GetMockWeatherView())); 
             // var dt = DateTime.Parse("1/1/2018 10:01PM");
             WeatherViewModel weather = await _serviceMock.Object.GetWeatherAsync();
             Assert.Equal(weather.DayOrNight, "night");

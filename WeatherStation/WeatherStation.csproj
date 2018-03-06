@@ -15,4 +15,15 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="Data\Mocks\darksky.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Data\Mocks\darksky.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Mocks\darksky.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
