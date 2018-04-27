@@ -65,3 +65,6 @@ obj
 
 # OS files
 .DS_Store
+
+# Visual Studio local/user env
+.vs/
