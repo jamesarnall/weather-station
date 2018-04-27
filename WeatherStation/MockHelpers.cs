@@ -22,7 +22,7 @@ namespace WeatherStation
             var resourceStream = _assembly.GetManifestResourceStream("WeatherStation.Data.Mocks.darksky.json");
             using (StreamReader sr = new StreamReader(resourceStream, Encoding.UTF8))
             {
-            // Read the stream to a string, and write the string to the console.
+                // Read the stream to a string, and write the string to the console.
                 json = sr.ReadToEnd();
             }
             return json;

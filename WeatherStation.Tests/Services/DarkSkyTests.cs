@@ -12,11 +12,9 @@ namespace WeatherStation.Tests
     public class DarkSkyTests
     {
         private readonly IDarkSkyApiService _service;
-        // private readonly Assembly           _assembly;
-
+        
         public DarkSkyTests()
         {
-            // _assembly = Assembly.GetEntryAssembly();
             _service  = new DarkSkyApiService();
         }
 
