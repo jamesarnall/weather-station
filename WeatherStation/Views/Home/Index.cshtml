@@ -23,7 +23,7 @@
         <!-- Add your site or application content here -->
         
 
-        <div id="weather-container" class="container">
+        <div id="weather-container" class="container">xxx
             
             <div class="current_time"><span id="current_time">@Model.CurrentTime</span></div>
             <div class="current_date" id="current_date">@Model.CurrentDate</div>
@@ -47,6 +47,7 @@
         <script>
 
             (function($, moment) {
+                
 
                 var apiUrl = '/api/weather', 
                     dom = {
@@ -58,8 +59,10 @@
                         conditionsIcon : document.getElementById("conditions_icon"),
                         containerId    : "weather-container"
                     };
+                
+                var api = ws.apiMock();
 
-                ws.load($, dom, apiUrl);
+                ws.load($, dom, api);
                 $("#weather-container").fadeIn();
 
             })(jQuery, moment);

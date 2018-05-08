@@ -4,7 +4,7 @@ icons: clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-clou
 
 */
 
-var ws = {};
+var ws = ws || {};
 
 ws.celsiusToFahrenheit = function(temp) {
     return Math.round(temp * 1.8 + 32);
@@ -21,18 +21,11 @@ ws.CurrentConditions = function () {
 
 ws.ForecastPeriod = function () { };
 
-ws.api = function (apiUrl) {
-    return $.ajax({
-        contentType : "application/json",
-        crossDomain : !0,
-        type        : "get",
-        url         : apiUrl
-    });
-};
 
-ws.fetchApiData = function(apiUrl, dom) {
+
+ws.fetchApiData = function(api, dom) {
   $("#" + dom.containerId).fadeOut();
-  ws.api(apiUrl)
+  api.getWeather()
     .done(function (result) {
         dom.body.className             = "weather " + result.dayOrNight + " " + result.icon;
         dom.temperature.textContent    = result.temperature;
@@ -49,14 +42,14 @@ ws.fetchApiData = function(apiUrl, dom) {
   ;
 };
 
-ws.load = function ($, dom, apiUrl) {
+ws.load = function ($, dom, api) {
 
     if (!dom) {
         console.log("DOM access didn't load");
         return;
     }
 
-    ws.fetchApiData(apiUrl, dom);
+    ws.fetchApiData(api, dom);
 
     setInterval(function() {
       ws.fetchApiData(apiUrl, dom);

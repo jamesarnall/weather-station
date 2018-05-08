@@ -68,3 +68,6 @@ obj
 
 # Visual Studio local/user env
 .vs/
+
+# Jetbrains IDEs
+.idea/

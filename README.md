@@ -33,6 +33,9 @@ gulp build
 
 ## To Do
 
+- [ ] Decouple client API calling by making a service object that is passed as a parameter (for better testing, etc.)   
+  - [ ] Recode client methods to take api (or mockApi) dependency as a parameter
+  - [ ] Pass in api/mock in the view
 - [x] Get better icons
 - [x] Nice animated fade when the display updates?
 - [ ] There's no error handling really going on. Might change this, for

@@ -41,7 +41,12 @@ gulp.task('sass', ['fonts'], function() {
 });
 
 gulp.task('js', function() {
-    return gulp.src(['./node_modules/jquery/dist/jquery.min.js', './node_modules/moment/min/moment.min.js', './WeatherStation/wwwroot/js/weatherapp.js'])
+    return gulp.src([
+            './node_modules/jquery/dist/jquery.min.js', 
+            './node_modules/moment/min/moment.min.js', 
+            './WeatherStation/wwwroot/js/api.js', 
+            './WeatherStation/wwwroot/js/weatherapp.js'
+        ])
         .pipe(concat('scripts.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./WeatherStation/wwwroot/js'));
