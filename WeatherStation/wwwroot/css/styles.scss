@@ -13,7 +13,10 @@ $font-family-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-seri
 $wi-path: "../fonts/weather";
 @import '../../../lib/weather-icons-master/sass/weather-icons';
 
-
+html, body {
+    color: #fff;
+    background-color: #000;
+}
 
 
 .primary-text-color {

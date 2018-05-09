@@ -23,7 +23,7 @@
         <!-- Add your site or application content here -->
         
 
-        <div id="weather-container" class="container">xxx
+        <div id="weather-container" class="container">
             
             <div class="current_time"><span id="current_time">@Model.CurrentTime</span></div>
             <div class="current_date" id="current_date">@Model.CurrentDate</div>
@@ -60,7 +60,8 @@
                         containerId    : "weather-container"
                     };
                 
-                var api = ws.apiMock();
+                var api = new ws.api(apiUrl);
+                @* var api = new ws.apiMock(); *@
 
                 ws.load($, dom, api);
                 $("#weather-container").fadeIn();

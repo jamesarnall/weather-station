@@ -8268,6 +8268,10 @@ a.text-dark:hover, a.text-dark:focus {
 .wi-wu-unknown:before {
   content: ""; }
 
+html, body {
+  color: #fff;
+  background-color: #000; }
+
 /**
  * Basic UI elements 
  */
