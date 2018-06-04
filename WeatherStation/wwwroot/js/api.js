@@ -6,29 +6,6 @@
 
 var ws = ws || {};
 
-// TODO: Does this acutally make sense?
-// ws.weather = function(data) {
-//     conditionsDesc  : data.conditionsDesc,
-//     conditionsLabel : data.conditionsLabel,
-//     currentDate     : data.currentDate,
-//     currentTime     : data.currentTime,
-//     dayOrNight      : data.dayOrNight,
-//     feelsLike       : data.feelsLike,
-//     temperature     : data.temperature,
-//     icon            : data.icon
-// };
-
-ws.weatherMock = {
-    conditionsDesc  : "conditionsDesc",
-    conditionsLabel : "conditionsLabel",
-    currentDate     : "7/9/1972",
-    currentTime     : "11:59 PM",
-    dayOrNight      : "night",
-    feelsLike       : "90",
-    temperature     : "70",
-    icon            : ""
-};
-
 // ---
 
 /**
@@ -40,22 +17,22 @@ ws.apiMock = function() {
     this.getWeather = function () {
 
         var ajaxMock = $.Deferred();
-
-        // conditionsDesc
-        // conditionsLabel
-        // currentDate
-        // currentTime
-        // dayOrNight
-        // feelsLike
-        // temperature
-        // icon
-
-        ajaxMock.resolve(ws.weatherMock);
+        ajaxMock.resolve({
+            conditionsDesc  : "Clear",
+            conditionsLabel : "clear-night",
+            currentDate     : "December 99, 9999",
+            currentTime     : "99:99 PM",
+            dayOrNight      : "night",
+            feelsLike       : "90",
+            temperature     : "70",
+            icon            : "clear"
+        });
 
         //
         return ajaxMock.promise();        
     };
     
+    //
     return this;
 };
 
