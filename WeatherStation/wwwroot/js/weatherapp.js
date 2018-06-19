@@ -21,8 +21,12 @@ ws.CurrentConditions = function () {
 
 ws.ForecastPeriod = function () { };
 
-
-
+/**
+ * [fetchApiData description]
+ * @param  {[type]} api [description]
+ * @param  {[type]} dom [description]
+ * @return {[type]}     [description]
+ */
 ws.fetchApiData = function(api, dom) {
   $("#" + dom.containerId).fadeOut();
   api.getWeather()
@@ -42,6 +46,9 @@ ws.fetchApiData = function(api, dom) {
   ;
 };
 
+/**
+ * Loads the view
+ */
 ws.load = function ($, dom, api) {
 
     if (!dom) {
