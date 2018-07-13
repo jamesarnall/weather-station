@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Weather</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -25,14 +25,14 @@
 
         <div id="weather-container" class="container">
             
-            <div class="current_time"><span id="current_time">@Model.CurrentTime</span></div>
-            <div class="current_date" id="current_date">@Model.CurrentDate</div>
+            <div class="current_time info-primary" id="current_time">@Model.CurrentTime</div>
+            <div class="current_date info-secondary" id="current_date">@Model.CurrentDate</div>
 
             <div class="current_conditions">
                 <i class="icon" id="conditions_icon"></i>
-                <div class="current_conditions__description" id="conditions_desc">@Model.ConditionsDesc</div>
+                <div class="current_conditions__description info-secondary" id="conditions_desc">@Model.ConditionsDesc</div>
             </div>
-            <div class="current_temp"><span id="temperature">@Model.Temperature</span> <span class="subtext">&#8457;</span></div>
+            <div class="current_temp info-primary"><span id="temperature">@Model.Temperature</span> <span class="subtext">&#8457;</span></div>
 
         </div>
 

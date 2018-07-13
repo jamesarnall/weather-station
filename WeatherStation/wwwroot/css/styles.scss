@@ -15,8 +15,8 @@ $wi-path: "../fonts/weather";
 
 html, body {
     color: #fff;
-    background-color: #000;
 }
+
 
 
 .primary-text-color {
@@ -100,9 +100,6 @@ html, body {
     font-size : 128px;
 }
 
-
-
-
 /**
  * Variations based on context (i.e. conditions)
  */
@@ -122,14 +119,12 @@ html, body {
 
             background-color: #69D2E7;
 
-            & .current_time,
-            & .current_temp {
+            & .info-primary {
                 color: #FFE545;
                 // @extend .primary-text-color;
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color : #FEFBAF;
             }
         }
@@ -151,14 +146,12 @@ html, body {
             // TODO: http://www.color-hex.com/color-palette/56856 maybe?
             background-color: #667787;
 
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {                
                 color: #F7F6E2;                
             }
 
-            & .current_date,
-            & .current_conditions__description {                
+            & .info-secondary {           
                 color: #D3CCC6;                
             }
 
@@ -172,14 +165,12 @@ html, body {
 
             background-color: #FCFDFF;
 
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {           
                 color: #6C788E;               
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #A6AEC1;
             }
 
@@ -192,14 +183,12 @@ html, body {
         &.sleet {
             background-color: #ACAAA8;
 
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {          
                color: #313233;               
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                color: #EEEADB; 
             }
 
@@ -213,14 +202,12 @@ html, body {
 
             background-color: #E6E8E3;
 
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {  
                color: #8F9A9C; 
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #BEC3BC;
             }
 
@@ -234,14 +221,12 @@ html, body {
 
             background-color: #7FBFFF;
 
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {
                 color: #ffffff;
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #D7DACF;
             }
 
@@ -254,21 +239,14 @@ html, body {
         &.partlycloudy {
 
             background-color: #95A8C4;
-
-            & .current_time {
+// info-primary
+// info-secondary
+            & .info-primary {
                 color: #F1ED05;    
             }
 
-            & .current_date {
+            & .info-secondary {
                 color: #F4C111;    
-            }
-
-            & .current_conditions__description {
-                color: #F4C111;    
-            }
-
-            & .current_temp {
-                color: #F1ED05; 
             }
 
             & .icon {
@@ -285,14 +263,12 @@ html, body {
         &.clear,
         &.wind {
 
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {
                 color: #E6E8E3;
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #bbccdd;
             }
         }
@@ -309,14 +285,12 @@ html, body {
 
             // background-color: #bbccdd;
             
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {
                 color: #95A8C4;
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #bbccdd;
             }
 
@@ -329,14 +303,12 @@ html, body {
 
             background-color: #000011;
             
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {
                 color: #95A8C4;
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #D7DACF;
             }
 
@@ -347,14 +319,12 @@ html, body {
 
         &.sleet {
             
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {
                 color: #95A8C4;
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #D7DACF;
             }
 
@@ -365,14 +335,12 @@ html, body {
 
         &.fog {
             
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {
                 color: #95A8C4;
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #D7DACF;
             }
 
@@ -383,14 +351,12 @@ html, body {
 
         &.cloudy {
 
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {
                 color: #95A8C4;
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #D7DACF;
             }
 
@@ -401,14 +367,12 @@ html, body {
 
         &.partlycloudy {
 
-            & .current_time,
-            & .current_temp,
+            & .info-primary,
             & .icon {
                 color: #95A8C4;
             }
 
-            & .current_date,
-            & .current_conditions__description {
+            & .info-secondary {
                 color: #D7DACF;
             }
 

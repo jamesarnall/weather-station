@@ -40,6 +40,18 @@ gulp.task('sass', ['fonts'], function() {
            ;
 });
 
+//browsersync
+gulp.task('browserSync', function () {
+    var files = [
+       './WeatherStation/wwwroot/css/*.scss'
+    ];
+
+    browserSync.init(files, {
+
+        proxy: "http://localhost:5000/"
+    });
+});
+
 gulp.task('js', function() {
     return gulp.src([
             './node_modules/jquery/dist/jquery.min.js', 
@@ -60,7 +72,7 @@ gulp.task('build', ['html','img','sass', 'js'], function() {
 
 
 gulp.task('watch-sass', ['sass'], function() {
-    gulp.watch("./WeatherStation/wwwroot/css/*.scss", ['sass']);
+    gulp.watch("./WeatherStation/wwwroot/css/*.scss", ['sass', browserSync.reload]);
 });
 
 // TODO: Out of date, using static files and we've moved on to .NET
