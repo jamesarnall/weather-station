@@ -59,7 +59,7 @@ ws.load = function ($, dom, api) {
     ws.fetchApiData(api, dom);
 
     setInterval(function() {
-      ws.fetchApiData(apiUrl, dom);
+      ws.fetchApiData(api, dom);
     }, 60000);
 
 };
