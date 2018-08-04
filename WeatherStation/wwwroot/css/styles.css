@@ -8037,7 +8037,49 @@ html, body {
 
 .current_temp {
   font-size: 96px;
-  font-weight: 500; }
+  font-weight: 500;
+  position: relative; }
+  .current_temp__actual, .current_temp__feelslike {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    display: inline;
+    position: absolute;
+    left: 0;
+    right: 0; }
+  .current_temp__actual {
+    animation-name: actualTrans; }
+  .current_temp__feelslike {
+    animation-name: feelslikeTrans; }
+
+@keyframes actualTrans {
+  0% {
+    opacity: 1; }
+  20% {
+    opacity: 1; }
+  40% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  80% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@keyframes feelslikeTrans {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 0; }
+  40% {
+    opacity: 0; }
+  60% {
+    opacity: 0; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
 
 .subtext {
   font-size: .66em;

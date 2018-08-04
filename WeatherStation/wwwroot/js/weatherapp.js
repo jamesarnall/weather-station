@@ -6,20 +6,22 @@ icons: clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-clou
 
 var ws = ws || {};
 
-ws.celsiusToFahrenheit = function(temp) {
-    return Math.round(temp * 1.8 + 32);
-};
+ws.tempScale = " &#8457;";
 
-ws.CurrentConditions = function () {
-    return {
-        temperature: {
-            celsius    : 0,
-            fahrenheit : 0
-        }
-    }
-};
+// ws.celsiusToFahrenheit = function(temp) {
+//     return Math.round(temp * 1.8 + 32);
+// };
 
-ws.ForecastPeriod = function () { };
+// ws.CurrentConditions = function () {
+//     return {
+//         temperature: {
+//             celsius    : 0,
+//             fahrenheit : 0
+//         }
+//     }
+// };
+
+// ws.ForecastPeriod = function () { };
 
 /**
  * [fetchApiData description]
@@ -32,10 +34,11 @@ ws.fetchApiData = function(api, dom) {
   api.getWeather()
     .done(function (result) {
         dom.body.className             = "weather " + result.dayOrNight + " " + result.icon;
-        dom.temperature.textContent    = result.temperature;
+        dom.temperature.innerHTML      = result.temperature + ws.tempScale;
         dom.currentTime.textContent    = result.currentTime;
         dom.currentDate.textContent    = result.currentDate;
-        dom.conditionsDesc.textContent = result.conditionsDesc;
+        dom.conditionsDesc.innerHTML   = result.conditionsDesc;
+        dom.feelsLike.innerHTML        = result.feelsLike + ws.tempScale;
         dom.conditionsIcon.className   = "icon";// + result.icon;
         $("#" + dom.containerId).fadeIn();
     })
