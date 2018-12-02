@@ -17,7 +17,17 @@ html, body {
     color: #fff;
 }
 
+.weather-position {
+    display  : table;
+    height   : 100%;
+    position : absolute;
+    width    : 100%;
 
+    &-cell {
+      display        : table-cell;
+      vertical-align : middle;
+    }
+}
 
 .primary-text-color {
     @extend .text-primary;
@@ -53,6 +63,7 @@ html, body {
 .current_temp {
     font-size   : 96px;
     font-weight : 500;
+    height      : 192px;
     position    : relative;
     
     &__actual,
@@ -161,15 +172,20 @@ html, body {
 .icon {
     @extend .wi;
     padding   : 48px;
-    font-size : 128px;
+    font-size : 160px;
 }
 
 /**
  * Variations based on context (i.e. conditions)
  */
 
- #weather-container {
-    display: none;
+ .weather-container {
+    @extend .container;
+    display       : none;
+    margin-left   : 0;
+    margin-right  : 0;
+    padding-left  : 0;
+    padding-right : 0;
  } 
 
 .weather {
@@ -445,25 +461,4 @@ html, body {
             }
         }
     }
-
-    // .test-temp {
-    //     position: relative;
-    // }
-
-    // .feelslike, .actual  {
-    //     position: absolute;
-    //     opacity: 0;
-    // }
-    // .actual {
-    //     transition: opacity 2s ease-in-out;
-    //     -moz-transition: opacity 2s ease-in-out;
-    //     -webkit-transition: opacity 2s ease-in-out;
-    // }
-
-    // .feelslike {
-    //     transition: opacity 2s ease-in-out;
-    //     -moz-transition: opacity 2s ease-in-out;
-    //     -webkit-transition: opacity 2s ease-in-out;
-    // }
-
 }
