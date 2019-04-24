@@ -1,15 +1,12 @@
-
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
-using System.IO;
-using System.Threading.Tasks;
 using WeatherStation.Controllers;
 using WeatherStation.Models;
 using WeatherStation.Services;
 using Xunit;
 
-namespace WeatherStation.Tests
+namespace WeatherStation.Tests.Controllers
 {
     public class WeatherControllerTests
     {

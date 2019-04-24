@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
-    "bootstrap-sass": "^3.3.7",
     "moment": "^2.19.2",
     "npm": "^5.7.1",
     "popper.js": "^1.15.0",

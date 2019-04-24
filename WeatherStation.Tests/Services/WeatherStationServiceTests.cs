@@ -1,16 +1,14 @@
-using System;
 using System.Threading.Tasks;
-
 using Moq;
 using WeatherStation.Models;
 using WeatherStation.Services;
 using Xunit;
 
-namespace WeatherStation.Tests
+namespace WeatherStation.Tests.Services
 {
     public class WeatherStationServiceTests
     {
-        private Mock<IWeatherService> _serviceMock;
+        private readonly Mock<IWeatherService> _serviceMock;
         // private readonly IWeatherService _service;
 
         public WeatherStationServiceTests()
@@ -24,10 +22,9 @@ namespace WeatherStation.Tests
         {
             _serviceMock
                 .Setup(repo => repo.GetWeatherAsync())
-                .Returns(Task.FromResult(MockHelpers.GetMockWeatherView())); 
-            // var dt = DateTime.Parse("1/1/2018 10:01PM");
+                .Returns(Task.FromResult(MockHelpers.GetMockWeatherView()));
             WeatherViewModel weather = await _serviceMock.Object.GetWeatherAsync();
-            Assert.Equal(weather.DayOrNight, "night");
+            Assert.Equal("night", weather.DayOrNight);
         }
 
         /*[Fact]
