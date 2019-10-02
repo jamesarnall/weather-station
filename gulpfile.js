@@ -1,4 +1,5 @@
 var { gulp, src, dest, watch, series, parallel } = require('gulp')
+,   { clean, restore, build, test, pack, publish, run } = require('gulp-dotnet-cli')
 ,   browserSync = require('browser-sync')
 ,   concat      = require('gulp-concat')
 ,   sass        = require('gulp-sass')
@@ -38,6 +39,28 @@ var bSync = function(done) {
     });
 }
 
+var buildDotnet = function(done) {
+    return src('*.sln', {read: false})
+        .pipe(build());
+}
+
+
+var runDotnet = function(done) {
+    return src('WeatherStation/WeatherStation.csproj', {read: false})
+            .pipe(run());
+}
+
+/*
+ TODO
+ - IIS/.NET server
+   - Live reloading & CSS injection
+ - JS
+   - JSlint
+   - Uglify
+ - Image compression
+ - Base64 images in styles
+ - Image optim
+ */
 
 
 // //browsersync
@@ -71,3 +94,5 @@ var bSync = function(done) {
 // });
 
 exports.default = parallel(fontsRoboto, fontsWeather, buildSass);
+exports.build   = series(buildDotnet);
+exports.run     = series(runDotnet);
