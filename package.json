@@ -1,7 +1,6 @@
 {
   "name": "weather-station",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "repository": "git@github.com:jamesarnall/weather-station.git",
   "author": "James Arnall <james@jamesarnall.com>",
@@ -9,6 +8,7 @@
   "private": true,
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-dotnet-cli": "^1.1.0",

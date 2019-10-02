@@ -63,7 +63,7 @@ html, body {
 .current_temp {
     font-size   : 96px;
     font-weight : 500;
-    height      : 192px;
+    // height      : 192px;
     position    : relative;
     
     &__actual,
@@ -73,7 +73,7 @@ html, body {
         animation-duration: 5s;
         animation-direction: alternate;
         display: inline;
-        position: absolute;
+        // position: absolute;
         left: 0;
         right: 0;
     }
