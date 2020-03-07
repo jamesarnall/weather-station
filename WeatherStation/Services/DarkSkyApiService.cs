@@ -54,7 +54,7 @@ namespace WeatherStation.Services
                 DayOrNight      = darkSky.Currently.Time.DayOrNight(darkSky.Daily.Data[0].SunsetTime),
                 CurrentDate     = currentTime.ToString("ddd, MMM d"),
                 CurrentTime     = currentTime.ToString("t"),
-                FeelsLike       = Math.Round(darkSky.Currently.ApparentTemperature).ToString(),
+                FeelsLike       = "(" + Math.Round(darkSky.Currently.ApparentTemperature).ToString() + ")",
                 Temperature     = Math.Round(darkSky.Currently.Temperature).ToString()
             };
 
