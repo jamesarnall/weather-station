@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using WeatherStation.Services;
 
 namespace WeatherStation
@@ -27,7 +28,7 @@ namespace WeatherStation
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -38,13 +39,21 @@ namespace WeatherStation
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseRouting();
             app.UseStaticFiles();
+            app.UseEndpoints(endpoints =>
+                {
+                    // Mapping of endpoints goes here:
+                    // endpoints.MapControllers()
+                    // endpoints.MapRazorPages()
+                    // endpoints.MapHub<MyChatHub>()
+                    // endpoints.MapGrpcService<MyCalculatorService>()
+                });
+            
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
